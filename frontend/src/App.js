@@ -1,36 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.scss';
 import StartScreen from './components/StartScreen';
 import QuestionScreen from './components/QuestionScreen';
 import EndScreen from './components/EndScreen';
 export default class App extends React.Component {
-  render() {
-    return (
-      <div>
-        
-      </div>
-    )
-  }
-
   constructor(props) {
     super(props);
     
     this.state = {
-      current_screen: 'Question4',
+      current_screen: 'StartScreen',
       questions: this.getQuestionsData(),
-      StartScreen: (<StartScreen/>),
-      EndScreen: (<EndScreen/>) 
+      StartScreen: (<StartScreen setScreen={this.setScreen}/>),
+      EndScreen: (<EndScreen setScreen={this.setScreen}/>) 
     }
-    
   }
 
   componentDidMount(){
     this.prepareQuestions();
-  }
-
-  current_screen_set(new_screen){
-    this.setState({current_screen: new_screen}, () => console.log('screen updated to ', new_screen));
   }
 
   async getQuestionsData(){
@@ -44,10 +31,9 @@ export default class App extends React.Component {
   }
 
 
-
   prepareQuestions(){
     if(this.state.questions){ 
-      console.log(this.state.questions);
+      // console.log(this.state.questions);
       this.state.questions
         .then(res => this.setState({questions: res},
           () => {
@@ -60,20 +46,25 @@ export default class App extends React.Component {
                     key={q.id}
                     number={q.id}
                     text={q.text}
-                    answers={[q.answer1,q.answer2,q.answer3,q.answer4]}/>
+                    answers={[q.answer1,q.answer2,q.answer3,q.answer4]}
+                    setScreen={this.setScreen}/>
                 )
-              }, () => console.log(this.state));
+              });
+              return 1;
             })
           })
         );
     }
   }
 
+  setScreen = (new_screen) => {
+    this.setState({current_screen: new_screen});
+  }
+
   render(){
     const {current_screen} = this.state;
     let view_port = this.state[current_screen];
-    // let view_port = ['StartScreen', 'EndScreen'].includes(current_screen) ? this.state[current_screen];  
-    console.log(this.state);
+    
     return (
       <div className="App">
         {view_port}
