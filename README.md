@@ -7,14 +7,12 @@
 ## NOTE: Username && password 
 ```
 - dump of db is provided per instructions but is not needed.
-- simply update mysql username && password in api/db/connection before running step 2 of the instructions.
+- simply update mysql username && password in api/db/connection before running step 1 of instructions.
 ```
 
 ## Instructions
 ```
-1. npm install
-2. npm setup
-3. npm start
+1. npm start
 ```
 [View]
 

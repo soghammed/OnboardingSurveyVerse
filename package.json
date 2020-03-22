@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "cd api && npm start",
     "client": "cd frontend && npm start",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "setup": "concurrently \"cd api && npm install\" \"cd frontend && npm install\""
+    "start": "npm install && concurrently \"npm run server\" \"npm run client\"",
   },
   "repository": {
     "type": "git",
