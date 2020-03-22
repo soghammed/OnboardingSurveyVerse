@@ -23,10 +23,12 @@ export default class QuestionScreen extends React.Component {
 
 	}
 
+	//update answer
 	setAnswer = (answer) => {
 		this.setState({selectedAnswer: answer});
 	}
 
+	//update screen view
 	setScreen(){
 		if(this.state.selectedAnswer === 0){
 			alert("Pick an answer and try again");
@@ -35,6 +37,7 @@ export default class QuestionScreen extends React.Component {
 		}
 		
 	}
+	
 	render() {
 		//based on figma design some Next Q & some Done.
 		let nextBtnText;
@@ -42,7 +45,7 @@ export default class QuestionScreen extends React.Component {
 			case 1:
 			case 2:
 			case 3:
-				nextBtnText = "Next Question";
+				nextBtnText = "Next question";
 				break;
 			case 4:
 			case 5:
@@ -75,7 +78,7 @@ export default class QuestionScreen extends React.Component {
 
 				<div className="question-number">Question {this.props.number} of {this.state.total}</div>
 
-				<div className={"question-text"+(this.props.number === 4 ? " smaller-text" : (this.props.number === 1 ? " w250": "") : "")}>{this.props.text}</div>
+				<div className={"question-text"+(this.props.number === 4 ? " smaller-text" : (this.props.number === 1 ? " w250": (this.props.number === 5 ? " w290" : "") : "") : "")}>{this.props.text}</div>
 				<div className={"a-option O-1"+(this.state.selectedAnswer === 1 ? " active" : "")} onClick={() => this.setAnswer(1)}><span className={"o-text"+(this.state.selectedAnswer === 1 ? " active" : "")}>{this.props.answers[0]}</span></div>
 				<div className={"a-option O-2"+(this.state.selectedAnswer === 2 ? " active" : "")} onClick={() => this.setAnswer(2)}><span className={"o-text"+(this.state.selectedAnswer === 2 ? " active" : "")}>{this.props.answers[1]}</span></div>
 				<div className={"a-option O-3"+(this.state.selectedAnswer === 3 ? " active" : "")} onClick={() => this.setAnswer(3)}><span className={"o-text"+(this.state.selectedAnswer === 3 ? " active" : "")}>{this.props.answers[2]}</span></div>

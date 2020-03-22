@@ -9,7 +9,7 @@ export default class App extends React.Component {
     super(props);
     
     this.state = {
-      current_screen: 'StartScreen',
+      current_screen: 'Question5',
       questions: this.getQuestionsData(),
       StartScreen: (<StartScreen setScreen={this.setScreen}/>),
       EndScreen: (<EndScreen setScreen={this.setScreen}/>) 
@@ -57,6 +57,7 @@ export default class App extends React.Component {
     }
   }
 
+  //update screem view
   setScreen = (new_screen) => {
     this.setState({current_screen: new_screen});
   }

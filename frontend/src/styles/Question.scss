@@ -120,6 +120,9 @@
 	.question-text.fs19{
 		font-size:19px;
 	}
+	.question-text.w290{
+		width:290px;
+	}
 	.a-option{
 		position: absolute;
 		width: 139.31px;
@@ -157,7 +160,7 @@
 		max-width:112px;	
 		//font-family: Roboto;
 		font-style: normal;
-		font-weight: 500;
+		font-weight: bold;
 		font-size: 13px;
 		line-height: 15px;
 		text-align: center;

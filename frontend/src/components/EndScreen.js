@@ -5,13 +5,13 @@ import EndScreenStyle from '../styles/EndScreen.scss'
 export default class EndScreen extends React.Component {
 	constructor(props) {
 	  super(props);
-	
+		
 	  this.state = {
 	  	title: 'Diet',
 	  	subtitle: 'Your score',
 	  	na: '2.9 Tons of CO2 produced per year',
 	  	slider_desc: 'Your using 3.2 Tons of CO2 / year',
-	  	footer: (<span>Lets take a look at how you look in the <i className="next-cat">Home</i> category</span>)
+	  	footer: (<span>Lets take a look at how you look in the <i className="next-cat">Home</i> category...</span>)
 	  };
 	}
 	render() {
