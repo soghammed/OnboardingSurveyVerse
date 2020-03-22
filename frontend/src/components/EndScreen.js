@@ -26,6 +26,7 @@ export default class EndScreen extends React.Component {
 				<div className="slider-bg"></div>
 				<div className="slider-gauge"></div>
 				<div className="slider-desc">{this.state.slider_desc}</div>
+				<div className="footer-bg"></div>
 				<div className="footer-content">{this.state.footer}</div>
 				<div className="survey-next" onClick={() => this.props.setScreen('StartScreen')}>
 					<span className="survey-next-text">Continue</span>

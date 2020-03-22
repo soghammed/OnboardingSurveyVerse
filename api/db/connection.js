@@ -41,8 +41,8 @@ con.connect((err) => {
               (
                 'How often do you eat meat and dairy?',
                 'Daily',
-                '1 or 2 times',
                 '3+ times per week',
+                '1 or 2 times',
                 'Not at all'
               ),
               (
@@ -69,8 +69,8 @@ con.connect((err) => {
               (
                 'How often do you eat seasonal veg from Europe?',
                 'Daily',
-                '1 or 2 times',
                 '3+ times per week',
+                '1 or 2 times',
                 'Not at all'
               )`, (err, rows) => {
                 if(err) throw err;

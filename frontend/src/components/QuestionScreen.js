@@ -17,15 +17,39 @@ export default class QuestionScreen extends React.Component {
 		  		this.props.number >= 4 ? true : false,
 		  		this.props.number >= 5 ? true : false,
 		  	]
-	  	}
+	  	},
+	  	selectedAnswer: 0,
 	  };
 
-	  
 	}
+
+	setAnswer = (answer) => {
+		this.setState({selectedAnswer: answer});
+	}
+
 	setScreen(){
-		this.props.setScreen(this.state.next_screen);
+		if(this.state.selectedAnswer === 0){
+			alert("Pick an answer and try again");
+		}else{
+			this.props.setScreen(this.state.next_screen);
+		}
+		
 	}
 	render() {
+		//based on figma design some Next Q & some Done.
+		let nextBtnText;
+		switch(this.props.number){
+			case 1:
+			case 2:
+			case 3:
+				nextBtnText = "Next Question";
+				break;
+			case 4:
+			case 5:
+				nextBtnText = "Done";
+				break;
+		}
+
 		return (
 			<div className="question">
 				<div className="questionsProgress"></div>
@@ -51,15 +75,15 @@ export default class QuestionScreen extends React.Component {
 
 				<div className="question-number">Question {this.props.number} of {this.state.total}</div>
 
-				<div className="question-text">{this.props.text}</div>
-				<div className="a-option O-1"><span className="o-text">{this.props.answers[0]}</span></div>
-				<div className="a-option active O-2"><span className="o-text active">{this.props.answers[1]}</span></div>
-				<div className="a-option O-3"><span className="o-text">{this.props.answers[2]}</span></div>
-				<div className="a-option O-4"><span className="o-text">{this.props.answers[3]}</span></div>
+				<div className={"question-text"+(this.props.number === 4 ? " smaller-text" : "")}>{this.props.text}</div>
+				<div className={"a-option O-1"+(this.state.selectedAnswer === 1 ? " active" : "")} onClick={() => this.setAnswer(1)}><span className={"o-text"+(this.state.selectedAnswer === 1 ? " active" : "")}>{this.props.answers[0]}</span></div>
+				<div className={"a-option O-2"+(this.state.selectedAnswer === 2 ? " active" : "")} onClick={() => this.setAnswer(2)}><span className={"o-text"+(this.state.selectedAnswer === 2 ? " active" : "")}>{this.props.answers[1]}</span></div>
+				<div className={"a-option O-3"+(this.state.selectedAnswer === 3 ? " active" : "")} onClick={() => this.setAnswer(3)}><span className={"o-text"+(this.state.selectedAnswer === 3 ? " active" : "")}>{this.props.answers[2]}</span></div>
+				<div className={"a-option O-4"+(this.state.selectedAnswer === 4 ? " active" : "")} onClick={() => this.setAnswer(4)}><span className={"o-text"+(this.state.selectedAnswer === 4 ? " active" : "")}>{this.props.answers[3]}</span></div>
 
 				<div className="survey-next-q" onClick={() => this.setScreen()}>
 					<span className="survey-next-text">
-						{this.props.number+1 < this.state.total ? 'Next Question' : 'Submit'}
+						{nextBtnText}
 					</span>
 				</div>
 			</div>

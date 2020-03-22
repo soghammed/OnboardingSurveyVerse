@@ -69,16 +69,17 @@
 		height: 50px;
 		left: 40px;
 		top: 528px;
+		display:flex;
+		justify-content:center;
+		align-items:center;
 
 		background: #48B07A;
 	}
 	.survey_next_text{
-		position: absolute;
+		//position: absolute;
 		width: 105px;
 		height: 16px;
-		left: 138px;
-		top: 545px;
-
+		
 		font-family: sans-serif;//Roboto;
 		font-style: normal;
 		font-weight: bold;

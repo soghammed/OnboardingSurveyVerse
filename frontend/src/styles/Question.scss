@@ -103,13 +103,19 @@
 		left: 41px;
 		top: 133px;
 
-		font-family: Roboto;
+		font-family: sans-serif;
 		font-style: normal;
 		font-weight: bold;
 		font-size: 20px;
 		line-height: 23px;
 
 		color: #373737;
+	}
+	.question-text.smaller-text{
+		font-size:18px;
+	}
+	.question-text.fs19{
+		font-size:19px;
 	}
 	.a-option{
 		position: absolute;
@@ -144,7 +150,8 @@
 		left: 196.69px;
 		top: 314px;
 	}
-	.o-text{	
+	.o-text{
+		max-width:100px;	
 		//font-family: Roboto;
 		font-style: normal;
 		font-weight: 500;
