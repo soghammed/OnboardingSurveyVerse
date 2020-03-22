@@ -4,5 +4,87 @@
 	height:667px;
 	background: #F8F8F8;
 	margin:auto;
-	border:1px solid red;
+	.start_screen_title{
+		position: absolute;
+		width: 257px;
+		height: 55px;
+		left: 59px;
+		top: 314px;
+
+		font-family: sans-serif;//Roboto;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 28px;
+		text-align: center;
+
+		color: #000000;
+	}
+
+	.start_screen_desc{
+		position: absolute;
+		width: 307px;
+		height: 123px;
+		left: 34px;
+		top: 387px;
+
+		font-family: sans-serif;//Roboto;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 21px;
+		text-align: center;
+
+		color: #000000;
+	}
+	.start_screen_img{
+		position: absolute;
+		width: 270px;
+		height: 158px;
+		left: 52px;
+		top: 92px;
+
+	}
+	.survey_button{
+		position: absolute;
+		width: 295px;
+		height: 50px;
+		left: 40px;
+		top: 528px;
+		background: #48B07A;
+
+		/*button text*/
+		font-family: Roboto;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 16px;
+
+		color: #FFFFFF;
+		/*end button text*/
+	}
+	.survey_next{
+		position: absolute;
+		width: 295px;
+		height: 50px;
+		left: 40px;
+		top: 528px;
+
+		background: #48B07A;
+	}
+	.survey_next_text{
+		position: absolute;
+		width: 105px;
+		height: 16px;
+		left: 138px;
+		top: 545px;
+
+		font-family: sans-serif;//Roboto;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 14px;
+		line-height: 16px;
+
+		color: #FFFFFF;
+	}
 }
