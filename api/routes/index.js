@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 router.get('/get-questions', (req, res, next) => {
 	conn.query("SELECT * FROM questions", (err, rows) => {
 		if(err) throw err;
-		return rows;
+		res.json(rows);
 	});
 });
 module.exports = router;

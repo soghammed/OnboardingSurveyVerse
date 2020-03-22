@@ -24,7 +24,7 @@ con.connect((err) => {
       con.query(`CREATE TABLE IF NOT EXISTS questions (
         id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
         text VARCHAR(255), 
-        answer VARCHAR(100), 
+        answer1 VARCHAR(100), 
         answer2 VARCHAR(100),
         answer3 VARCHAR(100),
         answer4 VARCHAR(100)
@@ -37,7 +37,7 @@ con.connect((err) => {
 
           //if empty then populate
           if(!rows.length){
-            con.query(`INSERT INTO questions (text, answer, answer2, answer3, answer4) VALUES 
+            con.query(`INSERT INTO questions (text, answer1, answer2, answer3, answer4) VALUES 
               (
                 'How often do you eat meat and dairy?',
                 'Daily',
@@ -61,6 +61,13 @@ con.connect((err) => {
               ),
               (
                 'How often do you eat avocados, asparagus, kiwi, fruit, pineapples?',
+                'Daily',
+                '1 or 2 times',
+                '3+ times per week',
+                'Not at all'
+              ),
+              (
+                'How often do you eat seasonal veg from Europe?',
                 'Daily',
                 '1 or 2 times',
                 '3+ times per week',
