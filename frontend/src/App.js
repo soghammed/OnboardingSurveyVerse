@@ -9,7 +9,7 @@ export default class App extends React.Component {
     super(props);
     
     this.state = {
-      current_screen: 'Question5',
+      current_screen: 'StartScreen',
       questions: this.getQuestionsData(),
       StartScreen: (<StartScreen setScreen={this.setScreen}/>),
       EndScreen: (<EndScreen setScreen={this.setScreen}/>) 
