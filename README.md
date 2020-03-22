@@ -5,11 +5,14 @@
 
 ## `NOTE: Username && password`
 - dump of db is provided per instructions but is not needed.
-- simply update mysql username && password in api/db/connection before running step 1 of instructions.
+- simply update mysql username && password in api/db/connection before running instructions.
 
 
 ## `Instructions`
+```
+- cd OnboardingSurveyVerse
 - npm start
+```
 
 [View App]
 
