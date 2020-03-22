@@ -9,9 +9,8 @@
 
 
 ## `Instructions`
-```
-1. npm start
-```
+- npm start
+
 [View App]
 
 [View App]: http://localhost:3000
