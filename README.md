@@ -1,15 +1,14 @@
-## `Requirments`<br/>
+## `Requirments`
 - node.js 
 - python
 - mysql
 
-## `NOTE: Username && password`<br/>
+## `NOTE: Username && password`
 - dump of db is provided per instructions but is not needed.
-<<<<<<< HEAD
 - simply update mysql username && password in api/db/connection before running step 1 of instructions.
 
 
-## `Instructions` <br/>
+## `Instructions`
 ```
 1. npm start
 ```
