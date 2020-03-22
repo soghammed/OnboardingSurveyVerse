@@ -111,6 +111,9 @@
 
 		color: #373737;
 	}
+	.question-text.w250{
+		width:250px;
+	}
 	.question-text.smaller-text{
 		font-size:18px;
 	}
@@ -151,7 +154,7 @@
 		top: 314px;
 	}
 	.o-text{
-		max-width:100px;	
+		max-width:112px;	
 		//font-family: Roboto;
 		font-style: normal;
 		font-weight: 500;
