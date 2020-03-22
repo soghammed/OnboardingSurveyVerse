@@ -15,8 +15,9 @@
 1. npm install
 2. npm setup
 3. npm start
+
+View
 ```
 
-`
-[View](http://localhost:3000)
-`
+[View]:(http://localhost:3000)
+
