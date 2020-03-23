@@ -18,6 +18,7 @@
 ## `Tools Used`
 - express-generator
 - node-sass
+- react-fade-in
 
 [View App]
 
