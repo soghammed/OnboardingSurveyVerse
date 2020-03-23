@@ -1,7 +1,9 @@
-## `Requirments`
-- node.js 
+## `Env Requirements`
+[USER ENV PATH VARIABLES]
+- node 
 - python
 - mysql
+- Windows/System32 (Windows)
 
 ## `NOTE: Username && password`
 - dump of db is provided per instructions but is not needed.
@@ -18,6 +20,11 @@
 - express-generator
 - node-sass
 
+## `Error`
+```
+Windows: windows/System32 must be in PATH
+
+```
 [View App]
 
 [View App]: http://localhost:3000
