@@ -11,20 +11,14 @@
 
 
 ## `Instructions`
-```
 - cd OnboardingSurveyVerse
 - npm start
-```
+
 
 ## `Tools Used`
 - express-generator
 - node-sass
 
-## `Error`
-```
-Windows: windows/System32 must be in PATH
-
-```
 [View App]
 
 [View App]: http://localhost:3000
