@@ -14,6 +14,10 @@
 - npm start
 ```
 
+## `Tools Used`
+- express-generator
+- node-sass
+
 [View App]
 
 [View App]: http://localhost:3000
