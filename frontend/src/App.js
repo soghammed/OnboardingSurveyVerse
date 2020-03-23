@@ -1,4 +1,5 @@
 import React from 'react';
+import FadeIn from 'react-fade-in';
 // import logo from './logo.svg';
 import './App.scss';
 import StartScreen from './components/StartScreen';
@@ -67,9 +68,9 @@ export default class App extends React.Component {
     let view_port = this.state[current_screen];
     
     return (
-      <div className="App">
-        {view_port}
-      </div>
+        <div className="App">
+          {view_port}
+        </div>
     );
   }
 

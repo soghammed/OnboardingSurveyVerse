@@ -1,5 +1,7 @@
 import React from 'react'
 import QuestionStyle from '../styles/Question.scss'
+import FadeIn from 'react-fade-in'
+
 export default class QuestionScreen extends React.Component {
 
 	constructor(props) {
@@ -54,42 +56,44 @@ export default class QuestionScreen extends React.Component {
 		}
 
 		return (
-			<div className="question">
-				<div className="questionsProgress"></div>
-				<div className="questionsProgressBar"></div>
-				
-				<div className="cat-progress diet-cat-progress active">
-					<div className={"p-block"+ (this.state.progressBlocks.diet[0] ? " active" : "")}></div>
-					<div className={`p-block`+ (this.state.progressBlocks.diet[1] ? " active" : "")}></div>
-					<div className={`p-block`+ (this.state.progressBlocks.diet[2] ? " active" : "")}></div>
-					<div className={`p-block`+ (this.state.progressBlocks.diet[3] ? " active" : "")}></div>
-					<div className={`p-block`+ (this.state.progressBlocks.diet[4] ? " active" : "")}></div>
+			<FadeIn>
+				<div className="question">
+					<div className="questionsProgress"></div>
+					<div className="questionsProgressBar"></div>
+					
+					<div className="cat-progress diet-cat-progress active">
+						<div className={"p-block"+ (this.state.progressBlocks.diet[0] ? " active" : "")}></div>
+						<div className={`p-block`+ (this.state.progressBlocks.diet[1] ? " active" : "")}></div>
+						<div className={`p-block`+ (this.state.progressBlocks.diet[2] ? " active" : "")}></div>
+						<div className={`p-block`+ (this.state.progressBlocks.diet[3] ? " active" : "")}></div>
+						<div className={`p-block`+ (this.state.progressBlocks.diet[4] ? " active" : "")}></div>
+					</div>
+					<div className="cat diet-cat">{this.state.cats[0]}</div>
+
+					<div className="cat-progress home-cat-progress"></div>
+					<div className="cat home-cat">{this.state.cats[1]}</div>
+
+					<div className="cat-progress travel-cat-progress"></div>
+					<div className="cat travel-cat">{this.state.cats[2]}</div>
+
+					<div className="cat-progress other-cat-progress"></div>
+					<div className="cat other-cat">{this.state.cats[3]}</div>
+
+					<div className="question-number">Question {this.props.number} of {this.state.total}</div>
+
+					<div className={"question-text"+(this.props.number === 4 ? " smaller-text" : (this.props.number === 1 ? " w250": (this.props.number === 5 ? " w290" : "") : "") : "")}>{this.props.text}</div>
+					<div className={"a-option O-1"+(this.state.selectedAnswer === 1 ? " active" : "")} onClick={() => this.setAnswer(1)}><span className={"o-text"+(this.state.selectedAnswer === 1 ? " active" : "")}>{this.props.answers[0]}</span></div>
+					<div className={"a-option O-2"+(this.state.selectedAnswer === 2 ? " active" : "")} onClick={() => this.setAnswer(2)}><span className={"o-text"+(this.state.selectedAnswer === 2 ? " active" : "")}>{this.props.answers[1]}</span></div>
+					<div className={"a-option O-3"+(this.state.selectedAnswer === 3 ? " active" : "")} onClick={() => this.setAnswer(3)}><span className={"o-text"+(this.state.selectedAnswer === 3 ? " active" : "")}>{this.props.answers[2]}</span></div>
+					<div className={"a-option O-4"+(this.state.selectedAnswer === 4 ? " active" : "")} onClick={() => this.setAnswer(4)}><span className={"o-text"+(this.state.selectedAnswer === 4 ? " active" : "")}>{this.props.answers[3]}</span></div>
+
+					<div className="survey-next-q" onClick={() => this.setScreen()}>
+						<span className="survey-next-text">
+							{nextBtnText}
+						</span>
+					</div>
 				</div>
-				<div className="cat diet-cat">{this.state.cats[0]}</div>
-
-				<div className="cat-progress home-cat-progress"></div>
-				<div className="cat home-cat">{this.state.cats[1]}</div>
-
-				<div className="cat-progress travel-cat-progress"></div>
-				<div className="cat travel-cat">{this.state.cats[2]}</div>
-
-				<div className="cat-progress other-cat-progress"></div>
-				<div className="cat other-cat">{this.state.cats[3]}</div>
-
-				<div className="question-number">Question {this.props.number} of {this.state.total}</div>
-
-				<div className={"question-text"+(this.props.number === 4 ? " smaller-text" : (this.props.number === 1 ? " w250": (this.props.number === 5 ? " w290" : "") : "") : "")}>{this.props.text}</div>
-				<div className={"a-option O-1"+(this.state.selectedAnswer === 1 ? " active" : "")} onClick={() => this.setAnswer(1)}><span className={"o-text"+(this.state.selectedAnswer === 1 ? " active" : "")}>{this.props.answers[0]}</span></div>
-				<div className={"a-option O-2"+(this.state.selectedAnswer === 2 ? " active" : "")} onClick={() => this.setAnswer(2)}><span className={"o-text"+(this.state.selectedAnswer === 2 ? " active" : "")}>{this.props.answers[1]}</span></div>
-				<div className={"a-option O-3"+(this.state.selectedAnswer === 3 ? " active" : "")} onClick={() => this.setAnswer(3)}><span className={"o-text"+(this.state.selectedAnswer === 3 ? " active" : "")}>{this.props.answers[2]}</span></div>
-				<div className={"a-option O-4"+(this.state.selectedAnswer === 4 ? " active" : "")} onClick={() => this.setAnswer(4)}><span className={"o-text"+(this.state.selectedAnswer === 4 ? " active" : "")}>{this.props.answers[3]}</span></div>
-
-				<div className="survey-next-q" onClick={() => this.setScreen()}>
-					<span className="survey-next-text">
-						{nextBtnText}
-					</span>
-				</div>
-			</div>
+			</FadeIn>
 		);
 	}
 }

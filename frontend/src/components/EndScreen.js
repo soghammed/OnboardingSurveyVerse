@@ -1,5 +1,6 @@
 import React from 'react'
 import EndScreenStyle from '../styles/EndScreen.scss'
+import FadeIn from 'react-fade-in';
 
 
 export default class EndScreen extends React.Component {
@@ -16,22 +17,24 @@ export default class EndScreen extends React.Component {
 	}
 	render() {
 		return (
-			<div className="end-screen">
-				<div className="cat-header"></div>
-				<div className="cat-title">{this.state.title}</div>
-				<div className="cat-subtitle">{this.state.subtitle}</div>
-				<div className="uk-national-average">
-					<b>UK National average:</b> {this.state.na}
+			<FadeIn>
+				<div className="end-screen">
+					<div className="cat-header"></div>
+					<div className="cat-title">{this.state.title}</div>
+					<div className="cat-subtitle">{this.state.subtitle}</div>
+					<div className="uk-national-average">
+						<b>UK National average:</b> {this.state.na}
+					</div>
+					<div className="slider-bg"></div>
+					<div className="slider-gauge"></div>
+					<div className="slider-desc">{this.state.slider_desc}</div>
+					<div className="footer-bg"></div>
+					<div className="footer-content">{this.state.footer}</div>
+					<div className="survey-next" onClick={() => this.props.setScreen('StartScreen')}>
+						<span className="survey-next-text">Continue</span>
+					</div>
 				</div>
-				<div className="slider-bg"></div>
-				<div className="slider-gauge"></div>
-				<div className="slider-desc">{this.state.slider_desc}</div>
-				<div className="footer-bg"></div>
-				<div className="footer-content">{this.state.footer}</div>
-				<div className="survey-next" onClick={() => this.props.setScreen('StartScreen')}>
-					<span className="survey-next-text">Continue</span>
-				</div>
-			</div>
+			</FadeIn>
 		)
 	}
 }
